@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landingpage rejjjjjsponsive</title>
+    <title>Landing Page Vertical Grid - Read More</title>
     <style>
         /* Reset & Base Styling */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f4f4f9;
             display: flex;
             flex-direction: column;
@@ -21,73 +17,75 @@
             padding: 20px;
         }
 
-        /* Container Utama */
         .container {
             width: 100%;
-            max-width: 800px; /* Batas lebar maksimal agar tetap proporsional di desktop */
+            max-width: 800px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
-        /* Box Postingan */
+        /* Post Box */
         .post-box {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             width: 100%;
         }
 
         .post-box h2 {
-            margin-bottom: 10px;
-            color: #333;
+            margin-bottom: 12px;
+            color: #222;
         }
 
-        .post-box p {
-            color: #666;
-            line-height: 1.6;
+        .post-content p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
-        /* Box Iklan Responsif */
+        /* Fitur Hide Content */
+        .more-text {
+            display: none; /* Sembunyikan paragraf selain yang pertama */
+        }
+
+        /* Tombol Read More */
+        .read-more-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Iklan Responsif */
+        .ad-wrapper { width: 100%; }
+        .ad-label { font-size: 11px; color: #aaa; text-align: center; margin-bottom: 8px; }
         .ad-container {
-            background: #ebebeb;
-            border: 1px dashed #bbb;
+            background: #eee;
+            border: 2px dashed #ccc;
             border-radius: 8px;
-            width: 100%;
+            min-height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Mengamankan jika konten iklan meluap */
-            min-height: 100px; /* Tinggi minimal box iklan */
-        }
-
-        /* Menghandel Konten Iklan Apapun (Gambar, Script, atau Iframe) */
-        .ad-container img, 
-        .ad-container iframe, 
-        .ad-container ins {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block;
-        }
-
-        /* Label Iklan (Opsional) */
-        .ad-label {
-            font-size: 10px;
-            color: #999;
             text-align: center;
-            margin-bottom: 5px;
-            text-transform: uppercase;
         }
 
-        /* Responsive Mobile */
+        /* Gambar/Iklan agar tidak pecah layout */
+        .ad-container img, .ad-container ins { max-width: 100%; height: auto; }
+
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .post-box {
-                padding: 15px;
-            }
+            body { padding: 10px; }
         }
     </style>
 </head>
@@ -96,35 +94,54 @@
     <div class="container">
         
         <article class="post-box">
-            <h2>Judul Postingan Utama</h2>
-            <p>Ini adalah area postingan dengan lebar responsif. Di desktop ia akan mengikuti batas maksimal, dan di perangkat mobile ia akan memenuhi lebar layar secara otomatis.</p>
+            <h2>Evolusi Strategi Digital Marketing</h2>
+            <div class="post-content">
+                <p>Ini adalah paragraf pertama yang akan selalu muncul di halaman utama (index). Paragraf ini berfungsi sebagai teaser untuk menarik minat pembaca.</p>
+                
+                <div class="more-text">
+                    <p>Ini adalah konten tambahan yang disembunyikan. Di sini Anda bisa memasukkan detail lebih lanjut, gambar pendukung, atau analisis mendalam mengenai topik yang dibahas.</p>
+                    <p>Dengan teknik ini, landing page Anda tetap terlihat rapi dan tidak terlalu panjang bagi pengguna perangkat mobile.</p>
+                </div>
+            </div>
+            <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </article>
 
         <div class="ad-wrapper">
-            <p class="ad-label">Advertisement</p>
+            <p class="ad-label">ADVERTISEMENT</p>
             <div class="ad-container">
-                <div style="padding: 20px; color: #888;">Slot Iklan Otomatis (Responsive)</div>
+                <p style="color: #999;">Iklan Responsif Menyesuaikan Lebar Layar</p>
             </div>
         </div>
 
         <article class="post-box">
-            <h2>Postingan Kedua</h2>
-            <p>Konten postingan lainnya yang diletakkan secara vertikal di bawah iklan.</p>
-        </article>
-
-        <div class="ad-wrapper">
-            <p class="ad-label">Advertisement</p>
-            <div class="ad-container">
-                <div style="padding: 20px; color: #888;">Slot Iklan Otomatis (Responsive)</div>
+            <h2>Memahami Algoritma Terbaru</h2>
+            <div class="post-content">
+                <p>Google terus memperbarui cara mereka menilai konten berdasarkan standar EEAT. Penting bagi kita untuk memahami setiap metriknya.</p>
+                
+                <div class="more-text">
+                    <p>Konten tambahan untuk postingan kedua. Fokus pada kualitas dan otoritas sumber informasi menjadi kunci utama dalam memenangkan persaingan di halaman pencarian.</p>
+                </div>
             </div>
-        </div>
-
-        <article class="post-box">
-            <h2>Postingan Ketiga</h2>
-            <p>Semua elemen di sini menggunakan sistem flex-direction: column sehingga tetap pada satu baris vertikal di perangkat apapun.</p>
+            <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </article>
 
     </div>
+
+    <script>
+        function toggleReadMore(button) {
+            // Mencari elemen konten tambahan di dalam post-box yang sama
+            const postBox = button.parentElement;
+            const moreText = postBox.querySelector('.more-text');
+
+            if (moreText.style.display === "none" || moreText.style.display === "") {
+                moreText.style.display = "block";
+                button.textContent = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                button.textContent = "Read More";
+            }
+        }
+    </script>
 
 </body>
 </html>

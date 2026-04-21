@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landingpage responsive</title>
+    <style>
+        /* Reset & Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Container Utama */
+        .container {
+            width: 100%;
+            max-width: 800px; /* Batas lebar maksimal agar tetap proporsional di desktop */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Box Postingan */
+        .post-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .post-box h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .post-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Box Iklan Responsif */
+        .ad-container {
+            background: #ebebeb;
+            border: 1px dashed #bbb;
+            border-radius: 8px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Mengamankan jika konten iklan meluap */
+            min-height: 100px; /* Tinggi minimal box iklan */
+        }
+
+        /* Menghandel Konten Iklan Apapun (Gambar, Script, atau Iframe) */
+        .ad-container img, 
+        .ad-container iframe, 
+        .ad-container ins {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+        }
+
+        /* Label Iklan (Opsional) */
+        .ad-label {
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .post-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <article class="post-box">
+            <h2>Judul Postingan Utama</h2>
+            <p>Ini adalah area postingan dengan lebar responsif. Di desktop ia akan mengikuti batas maksimal, dan di perangkat mobile ia akan memenuhi lebar layar secara otomatis.</p>
+        </article>
+
+        <div class="ad-wrapper">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-container">
+                <div style="padding: 20px; color: #888;">Slot Iklan Otomatis (Responsive)</div>
+            </div>
+        </div>
+
+        <article class="post-box">
+            <h2>Postingan Kedua</h2>
+            <p>Konten postingan lainnya yang diletakkan secara vertikal di bawah iklan.</p>
+        </article>
+
+        <div class="ad-wrapper">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-container">
+                <div style="padding: 20px; color: #888;">Slot Iklan Otomatis (Responsive)</div>
+            </div>
+        </div>
+
+        <article class="post-box">
+            <h2>Postingan Ketiga</h2>
+            <p>Semua elemen di sini menggunakan sistem flex-direction: column sehingga tetap pada satu baris vertikal di perangkat apapun.</p>
+        </article>
+
+    </div>
+
+</body>
+</html>
